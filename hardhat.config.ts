@@ -86,13 +86,13 @@ export function requireEnv(varName, msg?: string): string {
 
 // required environment variables
 [
-  'ETHERSCAN_KEY',
-  'SNOWTRACE_KEY',
-  'INFURA_KEY',
-  'POLYGONSCAN_KEY',
-  'ARBISCAN_KEY',
-  'LINEASCAN_KEY',
-  'OPTIMISMSCAN_KEY'
+  // 'ETHERSCAN_KEY',
+  // 'SNOWTRACE_KEY',
+  // 'INFURA_KEY',
+  // 'POLYGONSCAN_KEY',
+  // 'ARBISCAN_KEY',
+  // 'LINEASCAN_KEY',
+  // 'OPTIMISMSCAN_KEY'
 ].map((v) => requireEnv(v));
 
 // Networks
@@ -105,7 +105,7 @@ interface NetworkConfig {
 }
 
 const networkConfigs: NetworkConfig[] = [
-  { network: 'mainnet', chainId: 1 },
+  { network: 'mainnet', chainId: 1, url: 'https://ethereum-rpc.publicnode.com' },
   { network: 'ropsten', chainId: 3 },
   { network: 'rinkeby', chainId: 4 },
   { network: 'goerli', chainId: 5 },
@@ -123,7 +123,8 @@ const networkConfigs: NetworkConfig[] = [
   {
     network: 'base',
     chainId: 8453,
-    url: `https://fluent-prettiest-scion.base-mainnet.quiknode.pro/${QUICKNODE_KEY}`,
+    url: `https://base-rpc.publicnode.com`,
+    // url: 'https://base.drpc.org',
   },
   {
     network: 'arbitrum',
