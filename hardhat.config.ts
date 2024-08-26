@@ -105,7 +105,8 @@ interface NetworkConfig {
 }
 
 const networkConfigs: NetworkConfig[] = [
-  { network: 'mainnet', chainId: 1, url: 'https://ethereum-rpc.publicnode.com' },
+  { network: 'mainnet', chainId: 1, url: `https://sly-rough-surf.quiknode.pro/${QUICKNODE_KEY}`
+  },
   { network: 'ropsten', chainId: 3 },
   { network: 'rinkeby', chainId: 4 },
   { network: 'goerli', chainId: 5 },
@@ -123,8 +124,7 @@ const networkConfigs: NetworkConfig[] = [
   {
     network: 'base',
     chainId: 8453,
-    url: `https://base-rpc.publicnode.com`,
-    // url: 'https://base.drpc.org',
+    url: `https://sly-rough-surf.base-mainnet.quiknode.pro/${QUICKNODE_KEY}`,
   },
   {
     network: 'arbitrum',

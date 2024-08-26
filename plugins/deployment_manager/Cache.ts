@@ -137,7 +137,7 @@ export class Cache {
 
   async storeCache<T>(spec: FileSpec, data: T, diskTransformer: (T) => string = stringifyJson) {
     this.putMemory<T>(spec, data);
-    if (this.writeCacheToDisk) {
+    if (this.writeCacheToDisk || true) { // TODO: Temporary force the contracts crawl to persist
       await this.putDisk<T>(spec, data, diskTransformer);
     }
   }

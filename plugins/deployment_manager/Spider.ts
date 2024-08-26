@@ -94,6 +94,11 @@ async function crawl(
   contracts: ContractMap,
   trace: TraceFn
 ): Promise<Alias> {
+  // TODO: Slow down the crawl to avoid RPC rate limit errors. If this is not enough, modify in
+  // "node_modules/hardhat/internal/core/providers/http.js" function "async request(args)" to add some delay before
+  // doing the request.
+  await new Promise(ok => setTimeout(ok, 100));
+
   const { aliasRender, address, path } = node;
   const { template: aliasTemplate } = aliasRender;
   //trace(`Crawling ${address}`, aliasRender);
