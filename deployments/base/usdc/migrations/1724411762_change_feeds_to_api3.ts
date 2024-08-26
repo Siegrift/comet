@@ -18,6 +18,8 @@ const USDC_COMET_ADDRESS = '0xb125E6687d4313864e53df431d5425969c15Eb2F';
 
 let newWstETHToUSDPriceFeed: string;
 
+// NOTE: To run use:
+// DEBUG=true QUICKNODE_KEY=... ETHERSCAN_KEY=... BASESCAN_KEY=... npx hardhat migrate --network base --deployment usdc --prepare --enact --simulate 1724411762_change_feeds_to_api3 --impersonate 0xB933AEe47C438f22DE0747D57fc239FE37878Dd1 --overwrite
 export default migration('1724411762_change_feeds_to_api3', {
   prepare: async (deploymentManager: DeploymentManager) => {
     console.log("A1")
